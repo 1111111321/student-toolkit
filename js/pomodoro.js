@@ -1,6 +1,6 @@
 /* ===================================================
-   番茄钟
-   规则：专注 25 分钟 → 休息 5 分钟 → 循环
+   Pomodoro timer
+   25 minutes of focus, then a 5-minute break, repeated.
    =================================================== */
 
 const FOCUS_SECONDS = 25 * 60;
@@ -12,45 +12,44 @@ const startBtn = document.querySelector('#startBtn');
 const pauseBtn = document.querySelector('#pauseBtn');
 const resetBtn = document.querySelector('#resetBtn');
 
-let remaining = FOCUS_SECONDS;   // 还剩多少秒
-let timerId = null;              // 计时器的编号，null 表示没在跑
-let isFocus = true;              // 当前是否处于专注阶段
+let remaining = FOCUS_SECONDS;   // seconds left
+let timerId = null;              // interval id; null means "not running"
+let isFocus = true;              // are we in the focus phase?
 
-/* 把 remaining 显示成 25:00 这种格式 */
+/* Show `remaining` as 25:00 */
 function render() {
-  // TODO ①：算出分钟和秒
+  // TODO 1: work out minutes and seconds
   //   const m = Math.floor(remaining / 60);
   //   const s = remaining % 60;
-  // 然后拼成字符串，秒数不足两位要补零：String(s).padStart(2, '0')
-  // 最后写进 clock.textContent
+  // then build the string, padding the seconds: String(s).padStart(2, '0')
+  // and write it into clock.textContent
 }
 
-/* 每秒执行一次 */
+/* Runs once every second */
 function tick() {
   remaining -= 1;
   render();
 
   if (remaining <= 0) {
-    // TODO ②：到点了，切换阶段
-    //   如果 isFocus 是 true → 切成休息（isFocus = false，remaining = BREAK_SECONDS）
-    //   否则切回专注
-    //   同时更新 phase.textContent（'专注' / '休息'）
-    //   并重新 render()
+    // TODO 2: the block is over — switch phase
+    //   if isFocus is true  -> isFocus = false; remaining = BREAK_SECONDS
+    //   otherwise           -> isFocus = true;  remaining = FOCUS_SECONDS
+    //   update phase.textContent ('Focus' / 'Break'), then render() again
   }
 }
 
 startBtn.addEventListener('click', () => {
-  // TODO ③：如果 timerId 是 null（说明没在跑），就 setInterval(tick, 1000)
-  //          把返回的编号存进 timerId
-  //          提示：不判断的话，连点两次会变成两倍速
+  // TODO 3: only start if timerId is null (otherwise, clicking twice runs at double speed)
+  //         timerId = setInterval(tick, 1000)
 });
 
 pauseBtn.addEventListener('click', () => {
-  // TODO ④：清除计时器：clearInterval(timerId)，然后把 timerId 设回 null
+  // TODO 4: clearInterval(timerId), then set timerId back to null
 });
 
 resetBtn.addEventListener('click', () => {
-  // TODO ⑤：停表、回到专注阶段、remaining 重置成 FOCUS_SECONDS、render()
+  // TODO 5: stop the timer, go back to the focus phase,
+  //         set remaining = FOCUS_SECONDS and render()
 });
 
-render();  // 页面一打开就显示 25:00
+render();  // show 25:00 as soon as the page loads

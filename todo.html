@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="简单好用的待办清单，添加、勾选、删除任务。">
-  <title>待办清单 · 学生工具箱</title>
+  <meta name="description" content="A simple to-do list: add a task, tick it off, clear what is done.">
+  <title>To-do list · Student Toolkit</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <a class="skip-link" href="#main">跳到主要内容</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="index.html">学生工具箱</a>
+      <a class="logo" href="index.html">Student Toolkit</a>
 
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         ☰
       </button>
 
-      <nav id="site-nav" class="site-nav" aria-label="主导航">
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">首页</a></li>
-          <li><a href="pomodoro.html">番茄钟</a></li>
-          <li><a href="todo.html" aria-current="page">待办</a></li>
-          <li><a href="countdown.html">倒计时</a></li>
-          <li><a href="about.html">关于</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pomodoro.html">Pomodoro</a></li>
+          <li><a href="todo.html" aria-current="page">To-do</a></li>
+          <li><a href="countdown.html">Countdown</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
 
-      <button class="theme-toggle" id="themeToggle" aria-label="切换深色模式">🌙</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
     </div>
   </header>
 
@@ -37,28 +37,28 @@
 
     <section class="hero">
       <div class="container">
-        <h1>待办清单</h1>
-        <p>写下来，做完勾掉。别让事情堆在脑子里占内存。</p>
+        <h1>To-do list</h1>
+        <p>Write it down and tick it off. Do not keep everything in your head.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container tool tool-wide">
 
-        <!-- 用 form 而不是单独的按钮，这样按回车也能添加 -->
+        <!-- A form, not just a button, so pressing Enter also adds the task -->
         <form id="todoForm" class="tool-form">
-          <label for="todoInput" class="sr-only">新任务</label>
-          <input id="todoInput" type="text" placeholder="今天要做什么？" autocomplete="off" required>
-          <button class="btn" type="submit">添加</button>
+          <label for="todoInput" class="sr-only">New task</label>
+          <input id="todoInput" type="text" placeholder="What needs doing today?" autocomplete="off" required>
+          <button class="btn" type="submit">Add</button>
         </form>
 
-        <!-- 空列表，任务由 JS 动态创建 -->
+        <!-- Empty list: the items are created by JavaScript -->
         <ul id="todoList" class="todo-list"></ul>
 
-        <!-- role="status"：数量变化时读屏软件会播报 -->
-        <p id="todoCount" class="tool-tip" role="status">还没有任务</p>
+        <!-- role="status": screen readers announce the count when it changes -->
+        <p id="todoCount" class="tool-tip" role="status">No tasks yet</p>
 
-        <button id="clearDone" class="btn btn-ghost" type="button">清除已完成</button>
+        <button id="clearDone" class="btn btn-ghost" type="button">Clear completed</button>
 
       </div>
     </section>
@@ -67,7 +67,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 学生工具箱 · 个人项目</p>
+      <p>© 2026 Student Toolkit · Personal project</p>
     </div>
   </footer>
 

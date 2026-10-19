@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="25 分钟专注、5 分钟休息的在线番茄钟。">
-  <title>番茄钟 · 学生工具箱</title>
+  <meta name="description" content="A 25-minute focus timer with a 5-minute break, right in your browser.">
+  <title>Pomodoro · Student Toolkit</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <a class="skip-link" href="#main">跳到主要内容</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="index.html">学生工具箱</a>
+      <a class="logo" href="index.html">Student Toolkit</a>
 
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         ☰
       </button>
 
-      <nav id="site-nav" class="site-nav" aria-label="主导航">
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">首页</a></li>
-          <li><a href="pomodoro.html" aria-current="page">番茄钟</a></li>
-          <li><a href="todo.html">待办</a></li>
-          <li><a href="countdown.html">倒计时</a></li>
-          <li><a href="about.html">关于</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pomodoro.html" aria-current="page">Pomodoro</a></li>
+          <li><a href="todo.html">To-do</a></li>
+          <li><a href="countdown.html">Countdown</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
 
-      <button class="theme-toggle" id="themeToggle" aria-label="切换深色模式">🌙</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
     </div>
   </header>
 
@@ -37,27 +37,27 @@
 
     <section class="hero">
       <div class="container">
-        <h1>番茄钟</h1>
-        <p>专注 25 分钟，休息 5 分钟。一个番茄就是一段不被打断的时间。</p>
+        <h1>Pomodoro</h1>
+        <p>25 minutes of focus, then a 5-minute break. One pomodoro is one uninterrupted block of time.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container tool">
 
-        <!-- 当前处于哪个阶段：专注 / 休息 -->
-        <p class="tool-phase" id="phase">专注</p>
+        <!-- Which phase we are in: focus or break -->
+        <p class="tool-phase" id="phase">Focus</p>
 
-        <!-- 倒计时数字：role="timer" + aria-live 让读屏软件感知变化 -->
+        <!-- role="timer" + aria-live lets screen readers follow the countdown -->
         <p class="tool-clock" id="clock" role="timer" aria-live="polite">25:00</p>
 
         <div class="tool-actions">
-          <button id="startBtn" class="btn" type="button">开始</button>
-          <button id="pauseBtn" class="btn btn-ghost" type="button">暂停</button>
-          <button id="resetBtn" class="btn btn-ghost" type="button">重置</button>
+          <button id="startBtn" class="btn" type="button">Start</button>
+          <button id="pauseBtn" class="btn btn-ghost" type="button">Pause</button>
+          <button id="resetBtn" class="btn btn-ghost" type="button">Reset</button>
         </div>
 
-        <p class="tool-tip">开始之后别切走，25 分钟只做一件事。</p>
+        <p class="tool-tip">Once you start, do not switch away. One thing for 25 minutes.</p>
 
       </div>
     </section>
@@ -66,7 +66,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 学生工具箱 · 个人项目</p>
+      <p>© 2026 Student Toolkit · Personal project</p>
     </div>
   </footer>
 
