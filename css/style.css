@@ -1,17 +1,16 @@
 /* ===================================================
-   三角洲资料站 · 样式框架
-   说明：这里只搭好"布局"，颜值部分（颜色、圆角、
-   阴影、字体）留给你自己调。带 TODO 的地方是作业。
+   学生工具箱 · 样式框架
+   布局已经搭好，标了 TODO 的地方留给你自己调。
    =================================================== */
 
 /* ---------- 1. 配色：改这里整站变色 ---------- */
 :root {
-  --bg: #ffffff;          /* 页面背景 */
-  --surface: #f4f6f8;     /* 卡片背景 */
-  --text: #1d2125;        /* 正文颜色 */
-  --muted: #5b6570;       /* 次要文字 */
-  --primary: #b45309;     /* 主色（深色模式下会换一个亮一点的） */
-  --border: #d6dbe1;      /* 边框 */
+  --bg: #ffffff;
+  --surface: #f4f6f8;
+  --text: #1d2125;
+  --muted: #5b6570;
+  --primary: #2563eb;
+  --border: #d6dbe1;
 }
 
 body.dark {
@@ -19,11 +18,11 @@ body.dark {
   --surface: #1e2227;
   --text: #e6e8ea;
   --muted: #9aa4ae;
-  --primary: #f0a04b;
+  --primary: #60a5fa;
   --border: #343a41;
 }
 
-/* ---------- 2. 基础重置 ---------- */
+/* ---------- 2. 基础 ---------- */
 * { box-sizing: border-box; }
 
 body {
@@ -38,13 +37,25 @@ img { max-width: 100%; height: auto; display: block; }
 
 a { color: var(--primary); }
 
-/* TODO：键盘操作时的焦点框，别用 outline: none 直接删掉 */
 :focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* ---------- 3. 版心：内容不铺满屏幕 ---------- */
+/* 只给读屏软件看的文字，视觉上隐藏 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- 3. 版心 ---------- */
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -53,7 +64,7 @@ a { color: var(--primary); }
 
 .section { padding: 2.5rem 0; }
 
-/* ---------- 4. 跳过导航链接：Tab 第一下就能看到 ---------- */
+/* ---------- 4. 跳过导航 ---------- */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -64,10 +75,7 @@ a { color: var(--primary); }
   z-index: 100;
 }
 
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
-}
+.skip-link:focus { left: 1rem; top: 1rem; }
 
 /* ---------- 5. 头部与导航 ---------- */
 .site-header {
@@ -107,13 +115,12 @@ a { color: var(--primary); }
   padding: 0.2rem 0;
 }
 
-/* 当前页高亮：靠 aria-current 属性选，不用另加类名 */
 .site-nav a[aria-current="page"] {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
 }
 
-/* TODO：鼠标悬停时的效果（参考 :hover） */
+/* TODO：鼠标悬停效果 */
 
 .theme-toggle {
   margin-left: auto;
@@ -125,7 +132,6 @@ a { color: var(--primary); }
   cursor: pointer;
 }
 
-/* 手机端的菜单按钮，桌面端隐藏 */
 .menu-toggle {
   display: none;
   background: none;
@@ -136,10 +142,8 @@ a { color: var(--primary); }
   cursor: pointer;
 }
 
-/* ---------- 6. 首屏与卡片 ---------- */
-.hero {
-  padding: 3rem 0 2rem;
-}
+/* ---------- 6. 首屏 ---------- */
+.hero { padding: 3rem 0 2rem; }
 
 h1 {
   font-size: 2rem;
@@ -160,14 +164,23 @@ h2 {
 .btn {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.6rem 1.1rem;
+  padding: 0.6rem 1.2rem;
   background: var(--primary);
   color: #fff;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
   text-decoration: none;
-  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
 }
 
-/* TODO：悬停时让按钮稍微变暗，比如 filter: brightness(0.9) */
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+/* TODO：悬停时让按钮变暗一点 */
 
 .cards {
   display: grid;
@@ -189,75 +202,115 @@ h2 {
   margin: 0 0 0.6rem;
 }
 
-/* TODO：卡片悬停时轻微上浮或加阴影 */
-
-/* ---------- 7. 表格 ---------- */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95rem;
+/* ---------- 7. 工具区通用 ---------- */
+.tool {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
+  text-align: center;
 }
 
-caption {
+.tool-wide {
+  max-width: 640px;
   text-align: left;
+}
+
+.tool-phase {
   color: var(--muted);
   font-size: 0.85rem;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.15em;
+  margin: 0;
 }
 
-th, td {
-  border: 1px solid var(--border);
-  padding: 0.55rem 0.7rem;
-  text-align: left;
+.tool-clock {
+  font-size: 5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;  /* 数字等宽，跳动时不左右晃 */
+  letter-spacing: 0.02em;
+  margin: 0.2rem 0 1rem;
+  line-height: 1.1;
 }
 
-thead th { background: var(--surface); }
-
-/* ---------- 8. 筛选按钮（交互区） ---------- */
-.filters {
+.tool-actions {
   display: flex;
+  gap: 0.6rem;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.8rem;
 }
 
-.filter-btn {
-  padding: 0.4rem 0.9rem;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text);
-  border-radius: 999px;
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.9rem;
-}
-
-.filter-btn[aria-pressed="true"] {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: #fff;
-}
-
-.filter-hint {
+.tool-tip {
   color: var(--muted);
   font-size: 0.9rem;
   min-height: 1.4em;
 }
 
-/* ---------- 9. 攻略页列表 ---------- */
-.steps { padding-left: 1.4rem; }
+/* ---------- 8. 表单（待办、倒计时共用） ---------- */
+.tool-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
 
-.steps li { margin-bottom: 1.2rem; }
+.tool-form input {
+  flex: 1;
+  min-width: 10rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
 
-.steps h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
+.tool-form .btn { margin-top: 0; }
 
-.glossary dt { font-weight: 700; margin-top: 0.8rem; }
+.tool-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
 
-.glossary dd { margin: 0.2rem 0 0; color: var(--muted); }
+/* ---------- 9. 待办列表 ---------- */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
 
-.updates { padding-left: 1.2rem; }
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.2rem;
+  border-bottom: 1px solid var(--border);
+}
 
-/* ---------- 10. 页脚 ---------- */
+.todo-list li.done .todo-text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.todo-list .todo-del {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.2rem 0.4rem;
+}
+
+/* TODO：删除按钮悬停变红 */
+
+/* ---------- 10. 倒计时结果 ---------- */
+.cd-result {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1.5rem 0 0;
+}
+
+/* ---------- 11. 页脚 ---------- */
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 2rem;
@@ -266,21 +319,22 @@ thead th { background: var(--surface); }
   font-size: 0.85rem;
 }
 
-/* ---------- 11. 响应式：窄屏时改布局 ---------- */
+.updates { padding-left: 1.2rem; }
+
+/* ---------- 12. 响应式 ---------- */
 @media (max-width: 720px) {
-  .cards {
-    grid-template-columns: 1fr;   /* 三列变一列 */
-  }
+  .cards { grid-template-columns: 1fr; }
 
   h1 { font-size: 1.6rem; }
 
-  /* 菜单按钮出现，导航默认收起，点开加 .open 才显示 */
+  .tool-clock { font-size: 3.4rem; }
+
   .menu-toggle { display: block; }
 
   .site-nav {
     display: none;
     width: 100%;
-    order: 3;                     /* 换到按钮下方 */
+    order: 3;
   }
 
   .site-nav.open { display: block; }

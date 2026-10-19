@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="25 分钟专注、5 分钟休息的在线番茄钟。">
+  <title>番茄钟 · 学生工具箱</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">学生工具箱</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+        ☰
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="主导航">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="pomodoro.html" aria-current="page">番茄钟</a></li>
+          <li><a href="todo.html">待办</a></li>
+          <li><a href="countdown.html">倒计时</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="切换深色模式">🌙</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="container">
+        <h1>番茄钟</h1>
+        <p>专注 25 分钟，休息 5 分钟。一个番茄就是一段不被打断的时间。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container tool">
+
+        <!-- 当前处于哪个阶段：专注 / 休息 -->
+        <p class="tool-phase" id="phase">专注</p>
+
+        <!-- 倒计时数字：role="timer" + aria-live 让读屏软件感知变化 -->
+        <p class="tool-clock" id="clock" role="timer" aria-live="polite">25:00</p>
+
+        <div class="tool-actions">
+          <button id="startBtn" class="btn" type="button">开始</button>
+          <button id="pauseBtn" class="btn btn-ghost" type="button">暂停</button>
+          <button id="resetBtn" class="btn btn-ghost" type="button">重置</button>
+        </div>
+
+        <p class="tool-tip">开始之后别切走，25 分钟只做一件事。</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 学生工具箱 · 个人项目</p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/pomodoro.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="输入考试日期，自动计算还剩多少天。">
+  <title>考试倒计时 · 学生工具箱</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">学生工具箱</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+        ☰
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="主导航">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="pomodoro.html">番茄钟</a></li>
+          <li><a href="todo.html">待办</a></li>
+          <li><a href="countdown.html" aria-current="page">倒计时</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="切换深色模式">🌙</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="container">
+        <h1>考试倒计时</h1>
+        <p>选一个日期，看看从今天起还剩多少天。日子看得见，才不容易拖。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container tool tool-wide">
+
+        <form id="cdForm" class="tool-form">
+          <label for="cdDate">考试日期</label>
+          <input id="cdDate" type="date" required>
+          <button class="btn" type="submit">计算</button>
+        </form>
+
+        <!-- 结果区：role="status" 让结果变化时被读出来 -->
+        <p id="cdResult" class="cd-result" role="status">先选一个日期。</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 学生工具箱 · 个人项目</p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/countdown.js"></script>
+</body>
+</html>

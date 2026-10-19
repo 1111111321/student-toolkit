@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 改这里：一句话描述本站 -->
-  <meta name="description" content="这里写一句话描述你的网站。">
-  <title>首页 · 三角洲资料站</title>
+  <meta name="description" content="三个打开就能用的小工具：番茄钟、待办清单、考试倒计时。">
+  <title>首页 · 学生工具箱</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,8 +13,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <!-- 改这里：站名 -->
-      <a class="logo" href="index.html">三角洲资料站</a>
+      <a class="logo" href="index.html">学生工具箱</a>
 
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
         ☰
@@ -24,9 +22,9 @@
       <nav id="site-nav" class="site-nav" aria-label="主导航">
         <ul>
           <li><a href="index.html" aria-current="page">首页</a></li>
-          <li><a href="modes.html">模式与地图</a></li>
-          <li><a href="loadout.html">武器与配装</a></li>
-          <li><a href="guide.html">新手攻略</a></li>
+          <li><a href="pomodoro.html">番茄钟</a></li>
+          <li><a href="todo.html">待办</a></li>
+          <li><a href="countdown.html">倒计时</a></li>
           <li><a href="about.html">关于</a></li>
         </ul>
       </nav>
@@ -37,39 +35,49 @@
 
   <main id="main">
 
-    <!-- ① 首屏：大标题 + 一句话介绍 + 一个按钮 -->
+    <!-- ① 首屏：一句话说清这个站有什么用 -->
     <section class="hero">
       <div class="container">
-        <h1>这里写站名或大标题</h1>
-        <p>这里写一句话：这个站是给谁看的、能查到什么。</p>
-        <a class="btn" href="modes.html">从地图开始 →</a>
+        <h1>三个小工具，打开就能用</h1>
+        <p>不用注册、不用联网、不收集任何数据。给写作业的人用的。</p>
+        <a class="btn" href="pomodoro.html">先来个番茄钟 →</a>
       </div>
     </section>
 
-    <!-- ② 三个入口卡片：复制 <article class="card"> 三次，分别指向后三页 -->
+    <!-- ② 三个工具入口：复制这张卡片改成另外两个工具 -->
     <section class="section">
       <div class="container">
-        <h2>从这里开始</h2>
+        <h2>工具</h2>
         <div class="cards">
 
           <article class="card">
-            <h3>卡片标题</h3>
-            <p>两三句话说明这一页有什么内容。</p>
-            <a href="modes.html">进入 →</a>
+            <h3>番茄钟</h3>
+            <p>专注 25 分钟，休息 5 分钟。把注意力拉回一件事上。</p>
+            <a href="pomodoro.html">打开 →</a>
           </article>
 
-          <!-- 复制上面的 article，改成 loadout.html 和 guide.html -->
+          <article class="card">
+            <h3>待办清单</h3>
+            <p>把今天要做的事写下来，做完一件勾掉一件。</p>
+            <a href="todo.html">打开 →</a>
+          </article>
+
+          <article class="card">
+            <h3>考试倒计时</h3>
+            <p>选一个日期，看看还剩多少天，心里有个数。</p>
+            <a href="countdown.html">打开 →</a>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- ③ 最近更新：每条一个 li，写你实际改了什么 -->
+    <!-- ③ 更新日志：写你实际改了什么，也是给老师看的进度 -->
     <section class="section">
       <div class="container">
         <h2>最近更新</h2>
         <ul class="updates">
-          <li><time datetime="2026-10-19">10 月 19 日</time> —— 这里写这次改了什么</li>
+          <li><time datetime="2026-10-19">10 月 19 日</time> —— 把站点主题从游戏资料站改成工具箱</li>
         </ul>
       </div>
     </section>
@@ -78,10 +86,10 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 三角洲资料站 · 学生作品 · 非官方站点</p>
+      <p>© 2026 学生工具箱 · 个人项目</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/common.js"></script>
 </body>
 </html>

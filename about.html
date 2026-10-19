@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="这里写一句话描述本页。">
-  <title>关于 · 三角洲资料站</title>
+  <meta name="description" content="关于学生工具箱：为什么做、怎么做的、用了什么。">
+  <title>关于 · 学生工具箱</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="index.html">三角洲资料站</a>
+      <a class="logo" href="index.html">学生工具箱</a>
 
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
         ☰
@@ -22,9 +22,9 @@
       <nav id="site-nav" class="site-nav" aria-label="主导航">
         <ul>
           <li><a href="index.html">首页</a></li>
-          <li><a href="modes.html">模式与地图</a></li>
-          <li><a href="loadout.html">武器与配装</a></li>
-          <li><a href="guide.html">新手攻略</a></li>
+          <li><a href="pomodoro.html">番茄钟</a></li>
+          <li><a href="todo.html">待办</a></li>
+          <li><a href="countdown.html">倒计时</a></li>
           <li><a href="about.html" aria-current="page">关于</a></li>
         </ul>
       </nav>
@@ -38,39 +38,42 @@
     <section class="hero">
       <div class="container">
         <h1>关于本站</h1>
-        <p>写一两句这个站是什么、谁做的。</p>
+        <p>一个学生做的、给自己用的小工具站。</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <h2>关于我</h2>
-        <p>写你是谁、什么时候开始玩、玩哪个模式最多。两三句话就够，不用写成简历。</p>
+        <p>这里写你是谁、几年级、平时怎么安排学习时间。两三句话即可。</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <h2>为什么做这个站</h2>
-        <p>写真实原因：比如刚入门时找不到中文资料、想整理自己的配装思路。</p>
+        <p>写真实的原因：比如「用过很多待办 App，功能太多反而懒得打开」，所以想做一个打开就能用的。</p>
       </div>
     </section>
 
-    <!-- 资料来源：老师一般会看这个，别写"百度百科"了事 -->
     <section class="section">
       <div class="container">
-        <h2>资料来源</h2>
-        <ul class="sources">
-          <li><a href="#">官方公告</a> —— 写清楚具体是哪一篇</li>
-          <li>游戏内实测（版本号：写你玩的版本）</li>
+        <h2>怎么做的</h2>
+        <ul class="updates">
+          <li>纯 HTML / CSS / JavaScript，没有后端，没有数据库</li>
+          <li>数据只存在你自己的浏览器里，不上传服务器</li>
+          <li>用 Git 记录每一次修改</li>
         </ul>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2>免责声明</h2>
-        <p>本站为非官方粉丝作品，仅用于课程学习，与游戏开发商无关。图片与名称版权归原权利人所有。</p>
+        <h2>资料来源</h2>
+        <ul class="sources">
+          <li>番茄工作法：Francesco Cirillo 的方法，25 分钟专注 + 5 分钟休息</li>
+          <li>其余内容均为本人整理</li>
+        </ul>
       </div>
     </section>
 
@@ -78,10 +81,10 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 三角洲资料站 · 学生作品 · 非官方站点</p>
+      <p>© 2026 学生工具箱 · 个人项目</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/common.js"></script>
 </body>
 </html>
