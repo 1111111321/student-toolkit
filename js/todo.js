@@ -19,7 +19,7 @@ function updateCount() {
     return;
   }
 
-  todoCount.textContent = `${total} tasks, ${done} done`;
+  todoCount.textContent = `${total} task${total === 1 ? '' : 's'}, ${done} done`;
 }
 
 /* Build one task and put it at the end of the list */
