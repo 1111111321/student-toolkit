@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 改这里：一句话描述本站 -->
+  <meta name="description" content="这里写一句话描述你的网站。">
+  <title>首页 · 三角洲资料站</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- 改这里：站名 -->
+      <a class="logo" href="index.html">三角洲资料站</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+        ☰
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="主导航">
+        <ul>
+          <li><a href="index.html" aria-current="page">首页</a></li>
+          <li><a href="modes.html">模式与地图</a></li>
+          <li><a href="loadout.html">武器与配装</a></li>
+          <li><a href="guide.html">新手攻略</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="切换深色模式">🌙</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ① 首屏：大标题 + 一句话介绍 + 一个按钮 -->
+    <section class="hero">
+      <div class="container">
+        <h1>这里写站名或大标题</h1>
+        <p>这里写一句话：这个站是给谁看的、能查到什么。</p>
+        <a class="btn" href="modes.html">从地图开始 →</a>
+      </div>
+    </section>
+
+    <!-- ② 三个入口卡片：复制 <article class="card"> 三次，分别指向后三页 -->
+    <section class="section">
+      <div class="container">
+        <h2>从这里开始</h2>
+        <div class="cards">
+
+          <article class="card">
+            <h3>卡片标题</h3>
+            <p>两三句话说明这一页有什么内容。</p>
+            <a href="modes.html">进入 →</a>
+          </article>
+
+          <!-- 复制上面的 article，改成 loadout.html 和 guide.html -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ③ 最近更新：每条一个 li，写你实际改了什么 -->
+    <section class="section">
+      <div class="container">
+        <h2>最近更新</h2>
+        <ul class="updates">
+          <li><time datetime="2026-10-19">10 月 19 日</time> —— 这里写这次改了什么</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 三角洲资料站 · 学生作品 · 非官方站点</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

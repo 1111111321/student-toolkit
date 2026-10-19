@@ -1,0 +1,295 @@
+/* ===================================================
+   三角洲资料站 · 样式框架
+   说明：这里只搭好"布局"，颜值部分（颜色、圆角、
+   阴影、字体）留给你自己调。带 TODO 的地方是作业。
+   =================================================== */
+
+/* ---------- 1. 配色：改这里整站变色 ---------- */
+:root {
+  --bg: #ffffff;          /* 页面背景 */
+  --surface: #f4f6f8;     /* 卡片背景 */
+  --text: #1d2125;        /* 正文颜色 */
+  --muted: #5b6570;       /* 次要文字 */
+  --primary: #b45309;     /* 主色（深色模式下会换一个亮一点的） */
+  --border: #d6dbe1;      /* 边框 */
+}
+
+body.dark {
+  --bg: #14171a;
+  --surface: #1e2227;
+  --text: #e6e8ea;
+  --muted: #9aa4ae;
+  --primary: #f0a04b;
+  --border: #343a41;
+}
+
+/* ---------- 2. 基础重置 ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--primary); }
+
+/* TODO：键盘操作时的焦点框，别用 outline: none 直接删掉 */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ---------- 3. 版心：内容不铺满屏幕 ---------- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+.section { padding: 2.5rem 0; }
+
+/* ---------- 4. 跳过导航链接：Tab 第一下就能看到 ---------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ---------- 5. 头部与导航 ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.2rem 0;
+}
+
+/* 当前页高亮：靠 aria-current 属性选，不用另加类名 */
+.site-nav a[aria-current="page"] {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* TODO：鼠标悬停时的效果（参考 :hover） */
+
+.theme-toggle {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* 手机端的菜单按钮，桌面端隐藏 */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.55rem;
+  cursor: pointer;
+}
+
+/* ---------- 6. 首屏与卡片 ---------- */
+.hero {
+  padding: 3rem 0 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 34rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.1rem;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* TODO：悬停时让按钮稍微变暗，比如 filter: brightness(0.9) */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+
+.card h3 { margin: 0 0 0.4rem; }
+
+.card p {
+  color: var(--muted);
+  margin: 0 0 0.6rem;
+}
+
+/* TODO：卡片悬停时轻微上浮或加阴影 */
+
+/* ---------- 7. 表格 ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+caption {
+  text-align: left;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+}
+
+thead th { background: var(--surface); }
+
+/* ---------- 8. 筛选按钮（交互区） ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.filter-btn {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.filter-btn[aria-pressed="true"] {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.filter-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  min-height: 1.4em;
+}
+
+/* ---------- 9. 攻略页列表 ---------- */
+.steps { padding-left: 1.4rem; }
+
+.steps li { margin-bottom: 1.2rem; }
+
+.steps h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
+
+.glossary dt { font-weight: 700; margin-top: 0.8rem; }
+
+.glossary dd { margin: 0.2rem 0 0; color: var(--muted); }
+
+.updates { padding-left: 1.2rem; }
+
+/* ---------- 10. 页脚 ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- 11. 响应式：窄屏时改布局 ---------- */
+@media (max-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr;   /* 三列变一列 */
+  }
+
+  h1 { font-size: 1.6rem; }
+
+  /* 菜单按钮出现，导航默认收起，点开加 .open 才显示 */
+  .menu-toggle { display: block; }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    order: 3;                     /* 换到按钮下方 */
+  }
+
+  .site-nav.open { display: block; }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+  }
+
+  .theme-toggle { margin-left: auto; }
+}
