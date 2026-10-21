@@ -3,19 +3,34 @@
    =================================================== */
 
 /* ---------- 1. Mobile menu ---------- */
+
+/* On wide screens this button is hidden by CSS, so this code simply
+   never runs there. On narrow screens, tapping it opens the nav. */
 const menuToggle = document.querySelector('#menuToggle');
 const siteNav = document.querySelector('#site-nav');
 
 menuToggle.addEventListener('click', () => {
-  // TODO 1: toggle the 'open' class on siteNav (hint: classList.toggle('open'))
-  // TODO 2: read the new state and write it to the button's aria-expanded
-  //         hint: siteNav.classList.contains('open') returns true / false
+  siteNav.classList.toggle('open');
+
+  /* aria-expanded tells screen readers whether the menu is open.
+     It must stay in sync with what the eyes can see. */
+  const isOpen = siteNav.classList.contains('open');
+  menuToggle.setAttribute('aria-expanded', isOpen);
 });
 
 /* ---------- 2. Dark mode ---------- */
+
+/* All the colours live in CSS variables, so switching theme is just
+   adding one class to <body>. See :root and body.dark in style.css. */
 const themeToggle = document.querySelector('#themeToggle');
 
 themeToggle.addEventListener('click', () => {
-  // TODO 3: toggle the 'dark' class on document.body
-  // TODO 4: switch the button label between '🌙' and '☀️'
+  document.body.classList.toggle('dark');
+
+  const isDark = document.body.classList.contains('dark');
+  themeToggle.textContent = isDark ? '☀️' : '🌙';
+  themeToggle.setAttribute(
+    'aria-label',
+    isDark ? 'Switch to light mode' : 'Switch to dark mode'
+  );
 });
