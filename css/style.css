@@ -1,6 +1,6 @@
 /* ===================================================
    Student Toolkit — stylesheet
-   The layout is done. Anything marked TODO is yours to write.
+   Layout first, colour second. Every colour is a variable in :root.
    =================================================== */
 
 /* ---------- 1. Colours: change these to re-theme the site ---------- */
@@ -121,7 +121,7 @@ a { color: var(--primary); }
   border-bottom: 2px solid var(--primary);
 }
 
-/* TODO: hover state for nav links */
+.site-nav a:hover { color: var(--primary); }
 
 .theme-toggle {
   margin-left: auto;
@@ -181,7 +181,7 @@ h2 {
   border-color: var(--border);
 }
 
-/* TODO: make buttons darken slightly on hover */
+.btn:hover { filter: brightness(0.92); }
 
 .cards {
   display: grid;
@@ -303,7 +303,7 @@ h2 {
   padding: 0.2rem 0.4rem;
 }
 
-/* TODO: make the delete button turn red on hover */
+.todo-list .todo-del:hover { color: #d93025; }
 
 /* ---------- 10. Countdown result ---------- */
 .cd-result {
