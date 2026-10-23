@@ -203,6 +203,30 @@ h2 {
   margin: 0 0 0.6rem;
 }
 
+/* ---------- 6b. Screenshot gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.gallery figure { margin: 0; }
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 11 / 8;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.gallery figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
 /* ---------- 7. Tool area ---------- */
 .tool {
   max-width: 520px;
@@ -326,6 +350,8 @@ h2 {
 /* ---------- 12. Responsive ---------- */
 @media (max-width: 720px) {
   .cards { grid-template-columns: 1fr; }
+
+  .gallery { grid-template-columns: 1fr; }
 
   h1 { font-size: 1.6rem; }
 
